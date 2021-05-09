@@ -11,7 +11,7 @@ def data_binance(crypto_pair):
     for dictionary in json_dt:
         if (dictionary["symbol"] == crypto_pair):
             #print(dictionary['price'])
-    return (dictionary['price'])
+    return dictionary['price']
 
 
 def data_kucoin(crypto_pair):
