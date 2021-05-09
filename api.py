@@ -11,13 +11,17 @@ app.config["DEBUG"] = True
 def get_price():
     if 'coinpair' in request.args:
         coinpair = request.args['coinpair']
+        print(coinpair)
     else:
         return "Error: No id field provided. Please specify an id."
     price_dict = {}
     kc = biance_data.data_kucoin(coinpair)
+    print(kc)
     price_dict['kucoin'] = kc
     coinpair = coinpair.replace("-", "")
     bn = biance_data.data_binance(coinpair)
+    if bn == None:
+        bn = 0
     price_dict['binance'] = bn
     return jsonify(price_dict)
 
@@ -27,4 +31,4 @@ def get_all():
     cp = biance_data.get_all_coinpairs()
     return jsonify(cp)
 if __name__ == "__main__":
-    app.run(host="localhost", port=8000, debug=True)
+    app.run(host="localhost", port=5000, debug=True)

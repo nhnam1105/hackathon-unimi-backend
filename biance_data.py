@@ -11,6 +11,8 @@ def data_binance(crypto_pair):
     for dictionary in json_dt:
         if (dictionary["symbol"] == crypto_pair):
             #print(dictionary['price'])
+            print(dictionary)
+            print(dictionary['price'])
             return dictionary['price']
 
 
@@ -19,7 +21,9 @@ def data_kucoin(crypto_pair):
     request = requests.get(url)
     json_data = json.loads(request.text)
     # print(json_data)
-    #print(json_data['data'][0]['price'])  # tim data > chon position 0 in the list > extract 'price'
+    print(json_data['data'])  # tim data > chon position 0 in the list > extract 'price'
+    print(json_data['data'][0])
+    print(json_data['data'][0]['price'])
     return (json_data['data'][0]['price'])
 
 def get_all_coinpairs():
@@ -33,4 +37,4 @@ def get_all_coinpairs():
 ##########
 #data_binance('LTC', 'BTC')
 #data_kucoin('LTC', 'BTC')
-print(get_all_coinpairs())
+#print(get_all_coinpairs())
