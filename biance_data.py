@@ -7,7 +7,7 @@ from flask import request, jsonify
 def data_binance(crypto_pair):
     request = requests.get('https://api2.binance.com/api/v3/ticker/price')
     json_dt = json.loads(request.text)
-    print(json_dt)  # prices of all crypto
+    #print(json_dt)  # prices of all crypto
     for dictionary in json_dt:
         if (dictionary["symbol"] == crypto_pair):
             print(dictionary['price'])
