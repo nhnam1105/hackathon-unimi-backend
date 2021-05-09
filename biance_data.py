@@ -10,7 +10,7 @@ def data_binance(crypto_pair):
     #print(json_dt)  # prices of all crypto
     for dictionary in json_dt:
         if (dictionary["symbol"] == crypto_pair):
-            print(dictionary['price'])
+            #print(dictionary['price'])
     return (dictionary['price'])
 
 
