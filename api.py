@@ -26,4 +26,4 @@ def get_price():
 def get_all():
     cp = biance_data.get_all_coinpairs()
     return jsonify(cp)
-app.run()
+app.run(host="localhost", port=8000, debug=True)

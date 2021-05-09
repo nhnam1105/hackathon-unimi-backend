@@ -19,7 +19,7 @@ def data_kucoin(crypto_pair):
     request = requests.get(url)
     json_data = json.loads(request.text)
     # print(json_data)
-    print(json_data['data'][0]['price'])  # tim data > chon position 0 in the list > extract 'price'
+    #print(json_data['data'][0]['price'])  # tim data > chon position 0 in the list > extract 'price'
     return (json_data['data'][0]['price'])
 
 def get_all_coinpairs():
